@@ -4,13 +4,21 @@ USE `db_comeitpack`;
 
 CREATE TABLE IF NOT EXISTS `clients` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`firstname` varchar(50) NOT NULL,
-	`lastname` varchar(50) NOT NULL,
+	`name` varchar(250) NOT NULL,
 	`email` varchar(100) NOT NULL,
-    `phone_number` varchar(100) NOT NULL,
-	`type_c` varchar(50) NOT NULL,
-  	`password` varchar(255) NOT NULL,
-	`token` varchar(500) NOT NULL,
-	`validation` int(11) NOT NULL DEFAULT 0,
+    `phone_number` varchar(200) NOT NULL,
+	`address_deliv` varchar(255) NOT NULL,
+  	`city` varchar(50) NOT NULL,
+	`pays` varchar(50) NOT NULL,
+	`communication` varchar(50) NOT NULL,
+	`brand_id` int(11) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `brand` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`brand_name` varchar(250) NOT NULL,
+	`files` varchar(250) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+6

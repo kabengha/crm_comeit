@@ -8,13 +8,13 @@
 							<!--begin::Page title-->
 							<div class="page-title d-flex flex-column">
 								<!--begin::Title-->
-								<h1 class="d-flex text-white fw-bolder fs-2qx my-1 me-5">Account Settings</h1>
+								<h1 class="d-flex text-white fw-bolder fs-2qx my-1 me-5">Ajouter un client</h1>
 								<!--end::Title-->
 								<!--begin::Breadcrumb-->
 								<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 									<!--begin::Item-->
 									<li class="breadcrumb-item text-white opacity-75">
-										<a href="../index-2.html" class="text-white text-hover-primary">Home</a>
+										<a href="../index-2.html" class="text-white text-hover-primary">Accueil</a>
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
@@ -23,16 +23,14 @@
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
-									<li class="breadcrumb-item text-white opacity-75">Account</li>
+									<li class="breadcrumb-item text-white opacity-75">Client</li>
 									<!--end::Item-->
 									<!--begin::Item-->
 									<li class="breadcrumb-item">
 										<span class="bullet bg-white opacity-75 w-5px h-2px"></span>
 									</li>
 									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item text-white opacity-75">Settings</li>
-									<!--end::Item-->
+								 
 								</ul>
 								<!--end::Breadcrumb-->
 							</div>
@@ -791,7 +789,7 @@
 										<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
 											<!--begin::Card title-->
 											<div class="card-title m-0">
-												<h3 class="fw-bolder m-0">Profile Details</h3>
+												<h3 class="fw-bolder m-0">Ajouter un client</h3>
 											</div>
 											<!--end::Card title-->
 										</div>
@@ -802,30 +800,19 @@
 											<form id="kt_account_profile_details_form" class="form">
 												<!--begin::Card body-->
 												<div class="card-body border-top p-9">
-											 
+													{{form.hidden_tag()}}
 													<!--begin::Input group-->
 													<div class="row mb-6">
 														<!--begin::Label-->
-														<label class="col-lg-4 col-form-label required fw-bold fs-6">Full Name</label>
+														{{form.name.label(class="col-lg-4 col-form-label required fw-bold fs-6")}}
+													
 														<!--end::Label-->
 														<!--begin::Col-->
-														<div class="col-lg-8">
-															<!--begin::Row-->
-															<div class="row">
-																<!--begin::Col-->
-																<div class="col-lg-6 fv-row">
-																	<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
-																</div>
-																<!--end::Col-->
-																<!--begin::Col-->
-																<div class="col-lg-6 fv-row">
-																	<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last name" value="Smith" />
-																</div>
-																<!--end::Col-->
-															</div>
-															<!--end::Row-->
+														<div class="col-lg-8 fv-row">
+															<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last name" value="Smith" />
 														</div>
 														<!--end::Col-->
+														
 													</div>
 													<!--end::Input group-->
 													<!--begin::Input group-->
