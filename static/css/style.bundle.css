@@ -23,7 +23,7 @@
   --bs-gray-900: #181C32;
   --bs-white: #ffffff;
   --bs-light: #F5F8FA;
-  --bs-primary: #009EF7;
+  --bs-primary: #EC6C5B;
   --bs-secondary: #E4E6EF;
   --bs-success: #50CD89;
   --bs-info: #7239EA;
@@ -5121,7 +5121,7 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #FFFFFF;
-  background-color: #009EF7;
+  background-color: #EC6C5B;
   border-color: transparent;
 }
 .page-item.disabled .page-link {
@@ -37522,7 +37522,7 @@ a:hover {
 .btn.btn-primary {
   color: #FFFFFF;
   border-color: #009EF7;
-  background-color: #009EF7;
+  background-color: #EC6C5B;
 }
 .btn.btn-primary i {
   color: #FFFFFF;
@@ -37540,7 +37540,7 @@ a:hover {
 .btn-check:checked + .btn.btn-primary, .btn-check:active + .btn.btn-primary, .btn.btn-primary:focus:not(.btn-active), .btn.btn-primary:hover:not(.btn-active), .btn.btn-primary:active:not(.btn-active), .btn.btn-primary.active, .btn.btn-primary.show, .show > .btn.btn-primary {
   color: #FFFFFF;
   border-color: #0095E8;
-  background-color: #0095E8 !important;
+  background-color: #CE6B57 !important;
 }
 .btn-check:checked + .btn.btn-primary i, .btn-check:active + .btn.btn-primary i, .btn.btn-primary:focus:not(.btn-active) i, .btn.btn-primary:hover:not(.btn-active) i, .btn.btn-primary:active:not(.btn-active) i, .btn.btn-primary.active i, .btn.btn-primary.show i, .show > .btn.btn-primary i {
   color: #FFFFFF;
@@ -37557,9 +37557,9 @@ a:hover {
 }
 
 .btn.btn-light-primary {
-  color: #009EF7;
+  color: #EC6C5B;
   border-color: #F1FAFF;
-  background-color: #F1FAFF;
+  background-color: #EFE9E1;
 }
 .btn.btn-light-primary i {
   color: #009EF7;
@@ -37577,7 +37577,7 @@ a:hover {
 .btn-check:checked + .btn.btn-light-primary, .btn-check:active + .btn.btn-light-primary, .btn.btn-light-primary:focus:not(.btn-active), .btn.btn-light-primary:hover:not(.btn-active), .btn.btn-light-primary:active:not(.btn-active), .btn.btn-light-primary.active, .btn.btn-light-primary.show, .show > .btn.btn-light-primary {
   color: #FFFFFF;
   border-color: #009EF7;
-  background-color: #009EF7 !important;
+  background-color: #CE6B57 !important;
 }
 .btn-check:checked + .btn.btn-light-primary i, .btn-check:active + .btn.btn-light-primary i, .btn.btn-light-primary:focus:not(.btn-active) i, .btn.btn-light-primary:hover:not(.btn-active) i, .btn.btn-light-primary:active:not(.btn-active) i, .btn.btn-light-primary.active i, .btn.btn-light-primary.show i, .show > .btn.btn-light-primary i {
   color: #FFFFFF;

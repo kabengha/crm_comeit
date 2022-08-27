@@ -16,7 +16,7 @@ class add_client_form(FlaskForm):
     adresse_deliv = StringField(label='Addresse')
     city =  StringField(label='Ville')
     pays =  StringField(label='Pays')
-    communication = SelectField(u'Type communication', choices=[('Email', 'Email'), ('WhtasApp', 'WhtasApp')], validators=[
+    communication = SelectField(u'Type communication', choices=[('Email', 'Email'), ('WhatsApp', 'WhatsApp')], validators=[
         DataRequired()])
     submit = SubmitField(label='Ajouter un client')
 

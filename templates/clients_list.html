@@ -815,7 +815,7 @@
 											<!--begin::Filter-->
 											<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-											<span class="svg-icon svg-icon-2">
+											<span style="filter: invert(51%) sepia(58%) saturate(1496%) hue-rotate(326deg) brightness(101%) contrast(85%);" class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 													<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="currentColor" />
 												</svg>
@@ -836,16 +836,23 @@
 													<!--begin::Input group-->
 													<div class="mb-10">
 														<!--begin::Label-->
-														<label class="form-label fs-5 fw-bold mb-3">Month:</label>
+														<label class="form-label fs-5 fw-bold mb-3">Mois :</label>
 														<!--end::Label-->
 														<!--begin::Input-->
 														<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="month" data-dropdown-parent="#kt-toolbar-filter">
 															<option></option>
-															<option value="aug">August</option>
-															<option value="sep">September</option>
-															<option value="oct">October</option>
-															<option value="nov">November</option>
-															<option value="dec">December</option>
+															<option value="/01/">Janvier</option>
+															<option value="/02/">Février</option>
+															<option value="/03/">Mars</option>
+															<option value="/04/">Avril</option>
+															<option value="/05/">Mai</option>
+															<option value="/06/">Juin</option>
+															<option value="/07/">Juillet</option>
+															<option value="/08/">Août</option>
+															<option value="/09/">Septembre</option>
+															<option value="/10/">Octobre</option>
+															<option value="/11/">Novembre</option>
+															<option value="/12/">Décembre</option>
 														</select>
 														<!--end::Input-->
 													</div>
@@ -853,34 +860,29 @@
 													<!--begin::Input group-->
 													<div class="mb-10">
 														<!--begin::Label-->
-														<label class="form-label fs-5 fw-bold mb-3">Payment Type:</label>
+														<label class="form-label fs-5 fw-bold mb-3">Type de communication:</label>
 														<!--end::Label-->
 														<!--begin::Options-->
 														<div class="d-flex flex-column flex-wrap fw-bold" data-kt-customer-table-filter="payment_type">
 															<!--begin::Option-->
 															<label class="form-check form-check-sm form-check-custom form-check-solid mb-3 me-5">
-																<input class="form-check-input" type="radio" name="payment_type" value="all" checked="checked" />
-																<span class="form-check-label text-gray-600">All</span>
+																<input class="form-check-input" type="radio" name="payment_type" value="tous" checked="checked" />
+																<span class="form-check-label text-gray-600">Tous</span>
 															</label>
 															<!--end::Option-->
 															<!--begin::Option-->
 															<label class="form-check form-check-sm form-check-custom form-check-solid mb-3 me-5">
-																<input class="form-check-input" type="radio" name="payment_type" value="visa" />
-																<span class="form-check-label text-gray-600">Visa</span>
+																<input class="form-check-input" type="radio" name="payment_type" value="email" />
+																<span class="form-check-label text-gray-600">Email</span>
 															</label>
 															<!--end::Option-->
 															<!--begin::Option-->
 															<label class="form-check form-check-sm form-check-custom form-check-solid mb-3">
-																<input class="form-check-input" type="radio" name="payment_type" value="mastercard" />
-																<span class="form-check-label text-gray-600">Mastercard</span>
+																<input class="form-check-input" type="radio" name="payment_type" value="whatsapp" />
+																<span class="form-check-label text-gray-600">WhatsApp</span>
 															</label>
 															<!--end::Option-->
-															<!--begin::Option-->
-															<label class="form-check form-check-sm form-check-custom form-check-solid">
-																<input class="form-check-input" type="radio" name="payment_type" value="american_express" />
-																<span class="form-check-label text-gray-600">American Express</span>
-															</label>
-															<!--end::Option-->
+													 
 														</div>
 														<!--end::Options-->
 													</div>
@@ -899,7 +901,7 @@
 											<!--begin::Export-->
 											<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
 											<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
-											<span class="svg-icon svg-icon-2">
+											<span style="filter: invert(51%) sepia(58%) saturate(1496%) hue-rotate(326deg) brightness(101%) contrast(85%);" class="svg-icon svg-icon-2">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 													<rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="currentColor" />
 													<path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="currentColor" />
@@ -970,13 +972,13 @@
 													<a href="#" class="text-gray-600 text-hover-primary mb-1">{{client.email}}</a>
 												</td>
 												<!--end::Email=-->
-												<!--begin::Company=-->
+												<!--begin::Marque=-->
 												<td>{{client.brand_id}}</td>
-												<!--end::Company=-->
-												<!--begin::Payment method=-->
-												<td data-filter="mastercard">
+												<!--end::Marque=-->
+												<!--begin::Telephone =-->
+												<td data-filter="{{client.communication}}">
 												<img  alt="" /> {{client.phone_number}}</td>
-												<!--end::Payment method=-->
+												<!--end::Telephone =-->
 												<!--begin::Date=-->
 												<td>{{client.date_crea}}</td>
 												<!--end::Date=-->

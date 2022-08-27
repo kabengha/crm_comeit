@@ -27,7 +27,7 @@
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" style="background-image: url('static/media/patterns/header-bg.png')" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled aside-enabled">
+	<body id="kt_body" style="background-image: url('static/media/patterns/header_test.png')" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled aside-enabled">
 		<!--begin::Main-->
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root">
@@ -55,8 +55,8 @@
 							<!--end::Heaeder menu toggle-->
 							<!--begin::Header Logo-->
 							<div class="header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0">
-								<a href="/theme/dist/index.html">
-									<img alt="Logo" src="{{url_for('static', filename='/media/logos/logo-light.svg')}}" class="h-15px h-lg-20px logo-default" />
+								<a href="{{url_for('index')}}">
+									<img alt="Logo"    style="width: 149px; height:58px !important;" src="{{url_for('static', filename='/media/logos/logo-light.png')}}" class="h-15px h-lg-20px logo-default" />
 									<img alt="Logo" src="{{url_for('static', filename='/media/logos/logo-default.svg')}}" class="h-15px h-lg-20px logo-sticky" />
 								</a>
 							</div>

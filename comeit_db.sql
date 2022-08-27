@@ -11,15 +11,15 @@ CREATE TABLE IF NOT EXISTS `clients` (
   	`city` varchar(50),
 	`pays` varchar(50),
 	`communication` varchar(50),
-	`brand_id` int(11) NOT NULL,
+	`brand_id` varchar(150) NOT NULL,
 	`date_crea` varchar(50),
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `brand` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` varchar(150) NOT NULL ,
 	`brand_name` varchar(250) ,
 	`files` varchar(250) ,
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 6
