@@ -9,6 +9,7 @@
 							<div class="page-title d-flex flex-column">
 								<!--begin::Title-->
 								<h1 class="d-flex text-white fw-bolder fs-2qx my-1 me-5">Ajouter un client</h1>
+								
 								<!--end::Title-->
 								<!--begin::Breadcrumb-->
 								<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
@@ -40,6 +41,41 @@
 					<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
 						<!--begin::Post-->
 						<div class="content flex-row-fluid" id="kt_content">
+							{% if msg_err : %}
+								<!--begin::Alert-->
+								<div class="alert alert-danger   col-md-6 justify-content-center">
+									<!--begin::Icon-->
+									<span class="svg-icon svg-icon-2hx svg-icon-primary me-3">!!!</span>
+									<!--end::Icon-->
+
+									<!--begin::Wrapper-->
+									<div class="d-flex flex-column">
+										<!--begin::Title-->
+										<h4 class="mb-1 text-dark">{{msg_err}}</h4>
+										<!--end::Title-->
+									</div>
+									<!--end::Wrapper-->
+								</div>
+								<!--end::Alert-->
+							{% endif %}
+							{% if message_succ : %}
+								<!--begin::Alert-->
+								<div class="alert alert-success   col-md-6 justify-content-center">
+									<!--begin::Icon-->
+									<span class="svg-icon svg-icon-2hx svg-icon-primary me-3">!!!</span>
+									<!--end::Icon-->
+
+									<!--begin::Wrapper-->
+									<div class="d-flex flex-column">
+										<!--begin::Title-->
+										<h4 class="mb-1 text-dark">{{message_succ}}</h4>
+										<!--end::Title-->
+									</div>
+									<!--end::Wrapper-->
+								</div>
+								<!--end::Alert-->
+							{% endif %}
+							
 							<!--begin::Layout - Settings-->
 							<div class="d-flex flex-column flex-xl-row">
 							 
@@ -54,10 +90,13 @@
 												<h3 class="fw-bolder m-0">Ajouter un client</h3>
 											</div>
 											<!--end::Card title-->
+											
 										</div>
 										<!--begin::Card header-->
+									
 										<!--begin::Content-->
 										<div id="kt_account_settings_profile_details" class="collapse show">
+											
 											<!--begin::Form-->
 											<form id="kt_account_profile_details_form" class="form" action="{{url_for('ajouter_client')}}" method="POST">
 												<!--begin::Card body-->
@@ -157,12 +196,50 @@
 													<!--end::Label-->
 													<!--begin::Col-->
 													<div class="col-lg-8 fv-row">
-															{{form.communication(class="form-select form-select-solid form-select-lg fw-bold", placeholder="Pays")}}
+															{{form.communication(class="form-select form-select-solid form-select-lg fw-bold", placeholder="Communicaton")}}
 														</div>
 														<!--end::Col-->
 													</div>
 													<!--end::Input group-->
- 
+													<hr>
+													<!--begin::Label-->
+													<div class="row mb-6">
+														{{form.devis.label(class="col-lg-4 col-form-label required fw-bold fs-6")}}
+														<!--end::Label-->
+													<!--begin::Col-->
+													<div class="col-lg-8 fv-row">
+														{{form.devis(class="form-select form-select-solid form-select-lg fw-bold", id="avecdevis", placeholder="Avec devis ?")}}
+													</div>
+													<!--end::Col-->
+													</div>
+													<!--end::Input group-->
+
+													<!--begin:: devis_form -->
+
+													<div  id="form_devis" style="display: none;">
+														<div class="row mb-6" d="box1" > 
+															<div class="col-lg-10 mb-4 mb-lg-0" i>
+																<div class="fv-row mb-0">
+																	{{form.description_pr.label(class="orm-label fs-6 fw-bolder mb-3")}}
+																	{{form.description_pr(class="form-control form-control-lg form-control-solid", placeholder="Description")}}
+																</div>
+															</div>
+															<div class="col-lg-2">
+																<div class="fv-row mb-0">
+																	{{form.qte_pr.label(class="orm-label fs-6 fw-bolder mb-3")}}
+																	{{form.qte_pr(class="form-control form-control-lg form-control-solid", placeholder="Quantite")}}
+																</div>
+															</div>
+														 </div>
+													</div>
+													<!--end::Input group-->
+													<div class="card-footer d-flex justify-content-end py-6 px-9">
+														<button class="btn btn-light btn-active-light-primary me-2" type="button" id="plusButton"
+														onclick="add_row()">ADD</button>
+													</div>
+													<!--end:: devis_form -->
+
+
 												</div>
 												<!--end::Card body-->
 												<!--begin::Actions-->
@@ -227,6 +304,8 @@
 	 
 		<!--begin::Javascript-->
 		<script>var hostUrl = "";</script>
+
+
 		<!--begin::Global Javascript Bundle(used by all pages)-->
 		<script src="{{url_for('static', filename='/plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{url_for('static', filename='/js/scripts.bundle.js')}}"></script>
@@ -247,6 +326,70 @@
 		<script src="{{url_for('static', filename='/js/custom/utilities/modals/users-search.js')}}"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
+
+		<script>
+
+document.getElementById("avecdevis").addEventListener("change", avecdevisFunction);
+
+function avecdevisFunction() {
+	var avecDevis = document.getElementById("avecdevis").value;
+	if (avecDevis == 'Oui')
+		document.getElementById("form_devis").style.display = "";
+	else 
+		document.getElementById("form_devis").style.display = "none";
+}
+
+
+			var row = 2;
+
+
+function delete_row(unID) {
+	row--;
+	idName = "#box" + unID
+	$(idName).remove();
+
+
+
+}
+
+
+function add_row() {
+	if (row >= 1 && row <= 20) {
+
+		$("#form_devis").append(
+			
+		`	<div  class="row mb-6" id="box`+ row + `" >
+		
+			<div class="col-lg-10 mb-4 mb-lg-0" >
+			
+				<div class="fv-row mb-0">
+					{{form.description_pr.label(class="orm-label fs-6 fw-bolder mb-3")}}
+					{{form.description_pr(class="form-control form-control-lg form-control-solid", placeholder="Description")}}
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="fv-row mb-0">
+					{{form.qte_pr.label(class="orm-label fs-6 fw-bolder mb-3")}}
+					{{form.qte_pr(class="form-control form-control-lg form-control-solid", placeholder="Quantite")}}
+				</div>
+			</div>
+			<div class="card-footer d-flex justify-content-end py-6 px-9">
+			<button	class="btn btn-outline-danger btn-lg"	id="remove" type="button"	onclick="delete_row(`+ row + `)" > REMOVE   </button>
+			</div>
+			`
+
+		);
+
+		//name_count++;
+		//binary_count++;
+
+		row++;
+	} else {
+		document.getElementById("plusButton").style.display = "none";
+	}
+}
+
+		</script>
 	</body>
 	<!--end::Body-->
     

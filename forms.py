@@ -18,6 +18,11 @@ class add_client_form(FlaskForm):
     pays =  StringField(label='Pays')
     communication = SelectField(u'Type communication', choices=[('Email', 'Email'), ('WhatsApp', 'WhatsApp')], validators=[
         DataRequired()])
+    devis = SelectField(u'Avec devis', choices=[('Non', 'Non'), ('Oui', 'Oui')], validators=[
+        DataRequired()])
+    # ------------------------------------------------------------------------------
+    description_pr =  StringField(label='Description')
+    qte_pr =  StringField(label='Quantite')
     submit = SubmitField(label='Ajouter un client')
 
  
