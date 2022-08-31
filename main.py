@@ -57,6 +57,18 @@ def marques():
 
 
 
+@app.route('/devis')
+def devis():
+    try:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM devis ORDER BY date_crea DESC ')
+        data_devis = cursor.fetchall()
+    except:
+        return redirect(url_for('erreur'))
+    return render_template('devis_list.html', data_devis=data_devis)
+
+
+
 
 
 
@@ -142,6 +154,33 @@ def ajouter_client():
 
     return render_template('client_add.html', form=form, msg_err=msg_err, message_succ=message_succ)
 
+
+
+
+
+def data_client(id):
+    try :
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM clients WHERE id = %s', [id])
+        client = cursor.fetchone()
+    except:
+        msg = "something went wrong please try again"
+        return redirect(url_for('erreur'))
+
+    return client
+app.jinja_env.filters['data_client'] = data_client
+
+def data_brand(id):
+    try :
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM brand WHERE id = %s', [id])
+        brand = cursor.fetchone()
+    except:
+        msg = "something went wrong please try again"
+        return redirect(url_for('erreur'))
+
+    return brand
+app.jinja_env.filters['data_brand'] = data_brand
 
 if __name__ == '__main__':
     app.run(debug=True, port=2151)
